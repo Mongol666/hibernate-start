@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>eff2c9af-ff96-4f20-94c7-5feb5ded4d8d.TABLE:criteria_jpql.public.authors</OriginalElement>
+  <nodes>
+    <node x="68.0" y="129.0">eff2c9af-ff96-4f20-94c7-5feb5ded4d8d.TABLE:criteria_jpql.public.printed_products</node>
+    <node x="159.0" y="0.0">eff2c9af-ff96-4f20-94c7-5feb5ded4d8d.TABLE:criteria_jpql.public.types</node>
+    <node x="0.0" y="0.0">eff2c9af-ff96-4f20-94c7-5feb5ded4d8d.TABLE:criteria_jpql.public.authors</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="eff2c9af-ff96-4f20-94c7-5feb5ded4d8d.TABLE:criteria_jpql.public.printed_products" target="eff2c9af-ff96-4f20-94c7-5feb5ded4d8d.TABLE:criteria_jpql.public.types" relationship="REFERENCES">
+      <point x="40.25" y="-61.5" />
+      <point x="188.75" y="104.0" />
+      <point x="227.5" y="104.0" />
+      <point x="0.0" y="39.5" />
+    </edge>
+    <edge source="eff2c9af-ff96-4f20-94c7-5feb5ded4d8d.TABLE:criteria_jpql.public.printed_products" target="eff2c9af-ff96-4f20-94c7-5feb5ded4d8d.TABLE:criteria_jpql.public.authors" relationship="REFERENCES">
+      <point x="-40.25" y="-61.5" />
+      <point x="108.25" y="104.0" />
+      <point x="69.5" y="104.0" />
+      <point x="0.0" y="39.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="148.0" y="126.0" />
+  <SelectedNodes>
+    <node>eff2c9af-ff96-4f20-94c7-5feb5ded4d8d.TABLE:criteria_jpql.public.authors</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Columns</Category>
+    <Category>Comments</Category>
+    <Category>Key columns</Category>
+    <Category>Virtual foreign keys</Category>
+  </Categories>
+</Diagram>
+

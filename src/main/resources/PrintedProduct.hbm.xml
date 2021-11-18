@@ -11,7 +11,7 @@
         </id>
 
         <property name="name" column="pr_pr_name"/>
-        <!--<one-to-one name="type" class="com.gpisarev.models.Type"/>-->
-        <!-- <one-to-one name="author" class="com.gpisarev.models.Author"/>-->
+        <many-to-one name="author" class="com.gpisarev.models.Author"/>
+        <many-to-one name="type" class="com.gpisarev.models.Type"/>
     </class>
 </hibernate-mapping>
