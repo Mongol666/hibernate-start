@@ -13,21 +13,22 @@ import java.util.Objects;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "printed_products")
 public class PrintedProduct {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(table = "printed_products", name = "pr_pr_id")
+    @Column(name = "pr_pr_id")
     private int id;
 
-    @Column(table = "printed_products", name = "pr_pr_name")
+    @Column(name = "pr_pr_name")
     private String name;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(table = "authors", name = "a_id")
+    @JoinColumn(table = "printed_products", name = "a_id")
     private Author author;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(table = "types", name = "t_id")
+    @JoinColumn(name = "t_id")
     private Type type;
 
     public PrintedProduct withName(String name) {

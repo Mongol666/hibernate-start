@@ -25,23 +25,23 @@ public class Main {
 
 //        transaction1.commit();
 
-        PrintedProduct product = entityManager.find(PrintedProduct.class, 2);
+        PrintedProduct product = entityManager.find(PrintedProduct.class, 4);
         System.out.println(product);
 
         transaction1.commit();
 //        Author author = new Author().withName("Александр Пушкин");
 //        entityManager.persist(author);
 //
-//        Type type = new Type().withType("Книга");
+//        Type type = new Type().withType("Журнал");
 //        entityManager.persist(type);
 //
-//        PrintedProduct product = new PrintedProduct()
-//                .withName("Капитанская дочка")
-//                .withAuthor(author)
-//                .withType(type);
-//        entityManager.persist(product);
+        //PrintedProduct product = new PrintedProduct()
+        //.withName("Дневник Пушкина")
+        // .withAuthor(entityManager.find(Author.class, 2))
+        // .withType(entityManager.find(Type.class, 1));
+        // entityManager.persist(product);
 //
-//        transaction1.commit();
+        //transaction1.commit();
 
         //EntityTransaction transaction2 = entityManager.getTransaction();
         //transaction2.begin();
