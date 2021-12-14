@@ -23,11 +23,6 @@
         <property name="hibernate.dbcp.minIdle">5</property>
         <property name="hibernate.dbcp.maxWaitMillis">-1</property>
 
-        <!-- mapping files -->
-        <mapping resource="PrintedProduct.hbm.xml"/>
-        <mapping resource="Author.hbm.xml"/>
-        <mapping resource="Type.hbm.xml"/>
-
     </session-factory>
 
 </hibernate-configuration>
