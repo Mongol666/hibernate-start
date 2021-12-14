@@ -17,14 +17,14 @@ import java.util.Objects;
 public class Type {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(table = "types", name = "t_id")
+    @Column(table = "types", name = "id")
     private int id;
 
-    @Column(table = "types", name = "t_name")
-    private String type;
+    @Column(table = "types", name = "name")
+    private String name;
 
-    public Type withType(String type) {
-        setType(type);
+    public Type withName(String name) {
+        setName(name);
         return this;
     }
 
@@ -33,16 +33,16 @@ public class Type {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Type type1 = (Type) o;
-        return id == type1.id && type.equals(type1.type);
+        return id == type1.id && name.equals(type1.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, type);
+        return Objects.hash(id, name);
     }
 
     @Override
     public String toString() {
-        return type;
+        return name;
     }
 }

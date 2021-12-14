@@ -17,18 +17,18 @@ import java.util.Objects;
 public class PrintedProduct {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "pr_pr_id")
+    @Column(name = "id")
     private int id;
 
-    @Column(name = "pr_pr_name")
+    @Column(name = "name")
     private String name;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(table = "printed_products", name = "a_id")
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinColumn(name = "author_id")
     private Author author;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "t_id")
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinColumn(name = "type_id")
     private Type type;
 
     public PrintedProduct withName(String name) {

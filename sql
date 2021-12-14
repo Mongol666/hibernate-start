@@ -1,48 +1,57 @@
-create table authors
+create sequence authors_a_id_seq
+	as integer;
+
+alter sequence authors_a_id_seq owner to mongol;
+
+create sequence printed_products_pr_pr_id_seq
+	as integer;
+
+alter sequence printed_products_pr_pr_id_seq owner to mongol;
+
+create sequence types_t_id_seq
+	as integer;
+
+alter sequence types_t_id_seq owner to mongol;
+
+create table if not exists authors
 (
-    a_id   integer default nextval('authors_id_seq'::regclass) not null
-        constraint authors_pk
-            primary key,
-    a_name varchar(20)                                         not null
+	id integer default nextval('authors_a_id_seq'::regclass) not null
+		constraint authors_pkey
+			primary key,
+	name varchar(255)
 );
 
-alter table authors
-    owner to mongol;
+alter table authors owner to mongol;
 
-create unique index authors_id_uindex
-    on authors (a_id);
+alter sequence authors_a_id_seq owned by authors.id;
 
-create table types
+create table if not exists types
 (
-    t_id   integer default nextval('types_id_seq'::regclass) not null
-        constraint types_pk
-            primary key,
-    t_name varchar(20)                                       not null
+	id integer default nextval('types_t_id_seq'::regclass) not null
+		constraint types_pkey
+			primary key,
+	name varchar(255)
 );
 
-alter table types
-    owner to mongol;
+alter table types owner to mongol;
 
-create table printed_products
+alter sequence types_t_id_seq owned by types.id;
+
+create table if not exists printed_products
 (
-    pr_pr_id   integer default nextval('printed_products_id_seq'::regclass) not null
-        constraint printed_products_pk
-            primary key,
-    pr_pr_name varchar(20)                                                  not null,
-    author_id  integer                                                      not null
-        constraint author__fk
-            references authors,
-    type_id    integer                                                      not null
-        constraint type__fk
-            references types
+	id integer default nextval('printed_products_pr_pr_id_seq'::regclass) not null
+		constraint printed_products_pkey
+			primary key,
+	name varchar(255),
+	author_id integer
+		constraint fkhgweef3cya1go670281kfs3yw
+			references authors,
+	type_id integer
+		constraint fk5s2b3kp96jix1n8an5e3yg3tu
+			references types
 );
 
-alter table printed_products
-    owner to mongol;
+alter table printed_products owner to mongol;
 
-create unique index printed_products_id_uindex
-    on printed_products (pr_pr_id);
-
-create unique index types_id_uindex
-    on types (t_id);
+alter sequence printed_products_pr_pr_id_seq owned by printed_products.id;
 

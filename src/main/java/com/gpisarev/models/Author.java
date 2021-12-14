@@ -17,10 +17,10 @@ import java.util.Objects;
 public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(table = "authors", name = "a_id")
+    @Column(table = "authors", name = "id")
     private int id;
 
-    @Column(table = "authors", name = "a_name")
+    @Column(table = "authors", name = "name")
     private String name;
 
     public Author withName(String name) {
